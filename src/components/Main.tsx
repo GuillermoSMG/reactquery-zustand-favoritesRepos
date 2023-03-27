@@ -18,6 +18,18 @@ function Main() {
   };
 
   const { data, isLoading } = useFetchRepositories(username);
+
+  if (!username) {
+    return (
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <form onSubmit={handleSubmit}>
+          <input {...user} placeholder="Ingrese su usuario"></input>
+          <button>buscar</button>
+        </form>
+        <Link to="/favorites">Mis favoritos</Link>
+      </div>
+    );
+  }
   return (
     <div>
       <div style={{ display: "flex", justifyContent: "center" }}>
