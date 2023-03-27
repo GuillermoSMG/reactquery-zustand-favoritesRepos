@@ -6,7 +6,7 @@ function FavoriteRepo() {
   return (
     <div>
       {favoriteReposURLs.map((repo) => (
-        <div>
+        <div key={repo}>
           <Link style={{ color: "#f9f9f9" }} to={repo}>
             {repo}
           </Link>
