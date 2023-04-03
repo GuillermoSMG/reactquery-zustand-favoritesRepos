@@ -1,0 +1,72 @@
+@import "../index.module.css";
+.container {
+  background-color: var(--primary-color);
+  border-radius: 25px;
+  display: flex;
+  height: 15rem;
+  justify-content: space-between;
+}
+
+.avatar-container {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  padding: 0.7rem;
+}
+
+.avatar {
+  border-radius: 50%;
+  width: 100%;
+}
+
+.body-container {
+  background-color: var(--dark-color);
+  padding: 1rem;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0 25px 25px 0;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  color: var(--secondary-color);
+}
+
+.lenguage {
+  color: var(--secondary-color);
+  font-size: small;
+}
+
+.link-language {
+  text-decoration: none;
+  color: var(--action-color);
+}
+
+.link-language:hover {
+  color: var(--secondary-color);
+}
+
+.description {
+  color: var(--secondary-color);
+}
+
+.like-button {
+  border: none;
+  border-radius: 15px;
+  min-width: 6rem;
+  cursor: pointer;
+  background-color: var(--action-color);
+  color: var(--secondary-color);
+  padding: 0.7rem 0;
+}
+
+.button:hover {
+  background-color: var(--secondary-color);
+  color: var(--action-color);
+}
+
+.button:active {
+  transform: translateY(3px);
+}

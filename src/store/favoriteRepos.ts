@@ -1,31 +1,24 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
+import { Repository } from "../hooks/types";
 
 type favoriteReposState = {
-  favoriteReposIds: number[];
-  favoriteReposURLs: string[];
-  addFavoriteRepo: (id: number, url: string) => void;
-  removeFavoriteRepo: (id: number, url: string) => void;
+  favoriteRepos: Repository[];
+  addFavoriteRepo: (repo: Repository) => void;
+  removeFavoriteRepo: (repo: Repository) => void;
 };
 
 export const useFavoriteRepos = create(
   persist<favoriteReposState>(
     (set) => ({
-      favoriteReposIds: [],
-      favoriteReposURLs: [],
-      addFavoriteRepo: (id: number, url: string) =>
+      favoriteRepos: [],
+      addFavoriteRepo: (repo: Repository) =>
         set((state) => ({
-          favoriteReposIds: [...state.favoriteReposIds, id],
-          favoriteReposURLs: [...state.favoriteReposURLs, url],
+          favoriteRepos: [...state.favoriteRepos, repo],
         })),
-      removeFavoriteRepo: (id: number, url: string) =>
+      removeFavoriteRepo: (repo: Repository) =>
         set((state) => ({
-          favoriteReposIds: state.favoriteReposIds.filter(
-            (repoId) => repoId !== id
-          ),
-          favoriteReposURLs: state.favoriteReposURLs.filter(
-            (repoURL) => repoURL !== url
-          ),
+          favoriteRepos: state.favoriteRepos.filter((rep) => rep !== repo),
         })),
     }),
     { name: "favorite-repos" }
