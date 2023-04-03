@@ -27,7 +27,14 @@ function Card({ repository, isFavorite }: CardProps) {
         <img src={repository.owner.avatar_url} className={style.avatar} />
       </div>
       <div className={style["body-container"]}>
-        <h3 className={style.title}>{repository.name}</h3>
+        <a
+          className={style["title-link"]}
+          href={repository.html_url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <h3 className={style.title}>{repository.name}</h3>
+        </a>
         <p className={style.lenguage}>
           Main language:
           <a

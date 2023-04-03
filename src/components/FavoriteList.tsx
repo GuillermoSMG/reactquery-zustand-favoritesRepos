@@ -1,18 +1,21 @@
 import { Link } from "react-router-dom";
 import FavoriteRepo from "./FavoriteRepo";
-import style from "./FavoriteRepos.module.css";
+import style from "./FavoriteList.module.css";
+import { useFavoriteRepos } from "../store/favoriteRepos";
 
 function FavoriteList() {
+  const { favoriteRepos } = useFavoriteRepos();
+
   return (
-    <div>
+    <div className={style.main}>
       <div className={style["title-container"]}>
         <h1 className={style.title}>Favorite repos</h1>
         <Link className={style["search-link"]} to="/">
           Home
         </Link>
       </div>
-      <div>
-        {FavoriteRepo.length > 0 ? (
+      <div className={style["repos-container"]}>
+        {favoriteRepos.length > 0 ? (
           <FavoriteRepo />
         ) : (
           <div className={style["icon-container"]}>

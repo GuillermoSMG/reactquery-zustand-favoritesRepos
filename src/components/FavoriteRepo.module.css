@@ -1,0 +1,48 @@
+.container {
+  min-width: 40%;
+}
+
+.repo {
+  background-color: var(--dark-color);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  margin: 1rem;
+  align-items: center;
+  border-radius: 15px;
+  min-height: 10rem;
+  justify-content: space-between;
+}
+
+.repo-link {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+.user-link {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-size: small;
+}
+
+.repo-link:hover,
+.user-link:hover {
+  color: var(--action-color);
+}
+
+.button {
+  border: none;
+  border-radius: 15px;
+  min-width: 10rem;
+  cursor: pointer;
+  background-color: var(--action-color);
+  color: var(--secondary-color);
+  padding: 0.7rem 0;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+}
+
+.button:hover {
+  color: var(--action-color);
+  background-color: var(--secondary-color);
+}

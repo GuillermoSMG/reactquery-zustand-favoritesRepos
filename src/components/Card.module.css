@@ -3,7 +3,7 @@
   background-color: var(--primary-color);
   border-radius: 25px;
   display: flex;
-  height: 15rem;
+  min-height: 15rem;
   justify-content: space-between;
 }
 
@@ -32,6 +32,10 @@
 
 .title {
   color: var(--secondary-color);
+}
+
+.title-link {
+  text-decoration: none;
 }
 
 .lenguage {

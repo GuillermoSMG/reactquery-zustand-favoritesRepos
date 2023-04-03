@@ -29,12 +29,12 @@ function Main() {
             <input
               className={style["form-input"]}
               {...user}
-              placeholder="Ingrese su usuario"
+              placeholder="Enter an user"
             ></input>
-            <button className={style["form-button"]}>Buscar</button>
+            <button className={style["form-button"]}>Search</button>
           </form>
           <Link className={style["favs-link"]} to="/favorites">
-            Mis favoritos
+            Favos Repos
           </Link>
         </div>
         <div className={style["icon-container"]}>
@@ -56,10 +56,10 @@ function Main() {
             {...user}
             placeholder="Ingrese su usuario"
           ></input>
-          <button className={style["form-button"]}>Buscar</button>
+          <button className={style["form-button"]}>Search</button>
         </form>
         <Link className={style["favs-link"]} to="/favorites">
-          Mis favoritos
+          Favs Repos
         </Link>
       </div>
       {isLoading ? (
