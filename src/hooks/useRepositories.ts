@@ -8,6 +8,6 @@ const fetchRepos = async (ctx: QueryFunctionContext) => {
   return data;
 };
 
-export const useFetchRepositories = (user: string, filter: boolean) => {
-  return useQuery(['repos', user], fetchRepos, { enabled: !!filter });
+export const useFetchRepositories = (user: string) => {
+  return useQuery(['repos', user], fetchRepos, { enabled: false });
 };

@@ -1,7 +1,7 @@
-@import "../index.module.css";
+@import '../index.module.css';
 
 .main {
-  min-height: 100vh;
+  min-height: 100svh;
 }
 
 .form-container {
@@ -34,7 +34,7 @@
 }
 
 .form-button:before {
-  content: "Search";
+  content: 'Search';
 }
 
 .form-button:hover {
@@ -53,7 +53,7 @@
 
 .repos-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 1.5rem;
   margin: 2rem 0;
   padding: 2rem;
@@ -116,6 +116,6 @@
   }
 
   .form-button:before {
-    content: "🔍";
+    content: '🔍';
   }
 }

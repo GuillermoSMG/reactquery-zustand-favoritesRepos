@@ -9,7 +9,6 @@ import style from "./Main.module.css";
 
 function Main() {
   const [username, setUsername] = useState("");
-  const [filter, setFilter] = useState(false)
 
   const { favoriteRepos } = useFavoriteRepos((state) => ({
     favoriteRepos: state.favoriteRepos,
@@ -17,13 +16,14 @@ function Main() {
 
   const user = useField({ type: "text", name: "user" });
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
+  const handleSubmit = async(event: React.FormEvent<HTMLFormElement>): Promise<void> => {
     event.preventDefault();
-    setUsername(user.value);
-    setFilter(true)
+    if(!user.value) return
+    await setUsername(user.value);
+    refetch()
   };
 
-  const { data, isLoading, isError } = useFetchRepositories(username, filter)
+  const { data, isLoading, isError, refetch } = useFetchRepositories(username)
 
   if (!username) {
     return (
