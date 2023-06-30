@@ -1,16 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 :root {
   --primary-color: #7513cf;
   --secondary-color: #efefef;
   --action-color: #35bead;
   --dark-color: #241036;
-  --main-font: "Poppins", sans-serif;
+  --main-font: 'Poppins', sans-serif;
 }
 
-*,
-::after,
-::before {
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;

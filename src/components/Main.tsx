@@ -1,14 +1,15 @@
-import Card from "./Card";
-import { useFetchRepositories } from "../hooks/useRepositories";
-import { useFavoriteRepos } from "../store/favoriteRepos";
-import useField from "../hooks/useField";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import style from "./Main.module.css";
+import useField from "../hooks/useField";
+import { useFetchRepositories } from "../hooks/useRepositories";
+import { useFavoriteRepos } from "../store/favoriteRepos";
+import Card from "./Card";
 import Loading from "./Loading";
+import style from "./Main.module.css";
 
 function Main() {
   const [username, setUsername] = useState("");
+  const [filter, setFilter] = useState(false)
 
   const { favoriteRepos } = useFavoriteRepos((state) => ({
     favoriteRepos: state.favoriteRepos,
@@ -19,8 +20,11 @@ function Main() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
     setUsername(user.value);
+    setFilter(true)
   };
-  const { data, isLoading } = useFetchRepositories(username);
+
+  const { data, isLoading, isError } = useFetchRepositories(username, filter)
+
   if (!username) {
     return (
       <div className={style.main}>
@@ -31,10 +35,10 @@ function Main() {
               {...user}
               placeholder="Enter an user"
             ></input>
-            <button className={style["form-button"]}>Search</button>
+            <button className={style["form-button"]}></button>
           </form>
           <Link className={style["favs-link"]} to="/favorites">
-            Favos Repos
+            Favs Repos
           </Link>
         </div>
         <div className={style["icon-container"]}>
@@ -56,7 +60,7 @@ function Main() {
             {...user}
             placeholder="Ingrese su usuario"
           ></input>
-          <button className={style["form-button"]}>Search</button>
+          <button className={style["form-button"]}></button>
         </form>
         <Link className={style["favs-link"]} to="/favorites">
           Favs Repos

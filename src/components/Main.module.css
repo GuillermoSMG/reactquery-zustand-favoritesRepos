@@ -33,6 +33,10 @@
   border-radius: 15px;
 }
 
+.form-button:before {
+  content: "Search";
+}
+
 .form-button:hover {
   background-color: var(--secondary-color);
   color: var(--action-color);
@@ -93,5 +97,25 @@
 
   .form-button {
     max-width: fit-content;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .form-input {
+    width: 10px;
+    min-width: 8rem;
+    margin-inline-end: 0.5rem;
+  }
+
+  .form-button {
+    background-color: #fff;
+  }
+
+  .favs-link {
+    margin-left: 8%;
+  }
+
+  .form-button:before {
+    content: "🔍";
   }
 }
